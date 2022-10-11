@@ -1249,10 +1249,13 @@ endfunction
 
 "     {{{3 Checkout As
 function! s:CheckoutAs() abort
+  let v:warningmsg = ''
   let branch = s:branch_under_cursor()
 
   redraw
+  call inputsave()
   let new_name = input("Checkout " . branch.name . " as: ", "", "custom,TwiggyCompleteBranches")
+  call inputrestore()
   if new_name !=# ""
     if new_name ==# branch.name
       redraw
@@ -1415,7 +1418,9 @@ function! s:Push(choose_upstream, force) abort
     endif
     if len(remote_groups) > 1
       redraw
+      call inputsave()
       let group = input("Push to which remote?: ", '', "custom,TwiggyCompleteRemotes")
+      call inputrestore()
     elseif len(remote_groups) == 0
       redraw
       echo "There are no remotes to push to"
@@ -1426,7 +1431,9 @@ function! s:Push(choose_upstream, force) abort
   else
     if a:choose_upstream
       redraw
+      call inputsave()
       let group = input("Push to which remote?: ", '', "custom,TwiggyCompleteRemotes")
+      call inputrestore()
     else
       let group = split(branch.tracking, '/')[0]
     endif
@@ -1463,7 +1470,9 @@ function! s:Rename() abort
   let s:requires_buf_refresh = 0
 
   let branch = s:branch_under_cursor()
+  call inputsave()
   let new_name = input("Rename " . branch.fullname . " to: ")
+  call inputrestore()
   redraw
   echo "Renaming \"" . branch.fullname . "\" to \"" . new_name . "\"... "
   call s:git_cmd("branch -m " . branch.fullname . " " . new_name, 0)
