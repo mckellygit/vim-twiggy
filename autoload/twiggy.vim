@@ -186,7 +186,7 @@ function! s:call(mapping) abort
     call <SID>buffocus(t:twiggy_bufnr)
     if s:attn_mode()
       wincmd p
-      Gstatus
+      Git
     endif
     call s:RenderOutputBuffer()
   endif
@@ -198,7 +198,7 @@ endfunction
 function! s:parse_branch(branch, type) abort
   let branch = {}
 
-  let pieces = split(a:branch, "\t\t")
+  let pieces = split(a:branch, "\t\t", 1)
 
   let branch.current = pieces[0] ==# "*"
 
@@ -804,7 +804,7 @@ endfunction
 "     {{{3 bufrefresh
 function! s:bufrefresh()
   if &ft ==# 'gitcommit'
-    Gstatus
+    Git
   elseif &modifiable && &buftype ==# ''
     try
       silent edit
@@ -1242,8 +1242,7 @@ function! s:Checkout(track) abort
   let s:init_line = 0
   let s:last_branch_under_cursor = 0
 
-  " if wanted to refresh other windows etc.
-  doautocmd User TwiggyCheckoutCommand
+  doautocmd User TwiggyCheckout
 
   return 0
 endfunction
@@ -1267,8 +1266,7 @@ function! s:CheckoutAs() abort
     let s:init_line = 0
     let s:last_branch_under_cursor = 0
 
-    " if wanted to refresh other windows etc.
-    doautocmd User TwiggyCheckoutCommand
+    doautocmd User TwiggyCheckout
 
     return 0
   endif
@@ -1491,6 +1489,6 @@ function! s:close_string() abort
   endif
 endfunction
 
-autocmd BufEnter twiggy://* exec "command! -buffer Gstatus " . <SID>close_string() . " | silent normal! :<\C-U>Gstatus\<CR>"
-autocmd BufEnter twiggy://* exec "command! -buffer Gcommit " . <SID>close_string() . " | silent normal! :<\C-U>Gcommit\<CR>"
-autocmd BufEnter twiggy://* exec "command! -buffer Gblame  " . <SID>close_string() . " | silent normal! :<\C-U>Gblame\<CR>"
+autocmd BufEnter twiggy://* exec "command! -buffer Git " . <SID>close_string() . " | silent normal! :<\C-U>Git\<CR>"
+autocmd BufEnter twiggy://* exec "command! -buffer Git commit " . <SID>close_string() . " | silent normal! :<\C-U>Git commit\<CR>"
+autocmd BufEnter twiggy://* exec "command! -buffer Git blame  " . <SID>close_string() . " | silent normal! :<\C-U>Git blame\<CR>"
