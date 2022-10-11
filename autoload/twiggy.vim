@@ -1243,8 +1243,7 @@ function! s:Checkout(track) abort
   let s:init_line = 0
   let s:last_branch_under_cursor = 0
 
-  " if wanted to refresh other windows etc.
-  doautocmd User TwiggyCheckoutCommand
+  doautocmd User TwiggyCheckout
 
   return 0
 endfunction
@@ -1268,8 +1267,7 @@ function! s:CheckoutAs() abort
     let s:init_line = 0
     let s:last_branch_under_cursor = 0
 
-    " if wanted to refresh other windows etc.
-    doautocmd User TwiggyCheckoutCommand
+    doautocmd User TwiggyCheckout
 
     return 0
   endif
