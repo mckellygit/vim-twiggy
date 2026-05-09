@@ -353,10 +353,10 @@ gL                Git log on the range of the commits between the branch
                   under the cursor and the current branch
 
                   Stashing~
-                                                *twiggy->>*
+                                                *twiggy-<<*
 <<                `git stash`
 
-                                                *twiggy-<<*
+                                                *twiggy->>*
 >>                `git stash pop`
 
                   The End~
