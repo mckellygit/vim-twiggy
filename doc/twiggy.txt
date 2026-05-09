@@ -285,7 +285,7 @@ M                 Merge the branch under the cursor's remote into the current
 gm                Like m, but with --no-ff
 
                                                 *twiggy-gM*
-gm                Like M, but with --no-ff
+gM                Like M, but with --no-ff
 
                                                 *twiggy-r*
 r                 Rebase the current branch off the branch under the cursor.
