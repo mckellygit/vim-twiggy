@@ -96,7 +96,7 @@ Legal values are the same as for |local_branch_sort|.
                                                 *'remote_branch_sort'*
 
 Default 'alpha'
-The default/current sort for remote branches.  Values can be 'alpha'or
+The default/current sort for remote branches.  Values can be 'alpha' or
 'date' .
 >
   let g:twiggy_remote_branch_sort = 'date'
