@@ -66,7 +66,7 @@ Type `q` to quit.
 
 ### Example fetch and merge workflow
 
-Press `F` on the current branch to fetch from the upstream.  Without moving
+Press `f` on the current branch to fetch from the upstream.  Without moving
 your cursor, press `C` to checkout the remote branch in detached HEAD.  If
 everything looks good, move your cursor back to the original branch and press
 `c` to checkout, then press `M` to merge the upstream changes.
