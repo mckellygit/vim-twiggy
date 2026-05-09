@@ -209,7 +209,7 @@ MAPPINGS                                        *twiggy-mappings*
                                                 *twiggy-<C-P>*
 <C-P>             Jump to the first branch of the previous group
 
-                                                *twiggy-<C-^>*
+                                                *twiggy-J*
 J                 Jump to the current branch
 
                   Sorting~
