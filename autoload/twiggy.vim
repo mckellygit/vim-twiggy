@@ -974,6 +974,9 @@ function! s:Render() abort
   call s:mapping('gc',      'CheckoutAs',       [])
   call s:mapping('go',      'CheckoutAs',       [])
   call s:mapping('dd',      'Delete',           [])
+  if g:twiggy_enable_remote_delete
+    call s:mapping('dP',    'DeleteRemote',     [])
+  endif
   call s:mapping('F',       'Fetch',            [0]) " deprecated
   call s:mapping('f',       'Fetch',            [0])
   call s:mapping('m',       'Merge',            [0, ''])
