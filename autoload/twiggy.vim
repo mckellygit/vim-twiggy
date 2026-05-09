@@ -669,7 +669,7 @@ function! s:cherry_pick_view() abort
         \ "cherry pick in progress",
         \ "",
         \ "from this window:",
-        \ "  c to continue",
+        \ "  s to continue",
         \ "  a to abort"
         \ ]
 endfunction
