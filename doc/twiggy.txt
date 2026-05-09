@@ -29,7 +29,7 @@ before running the actual commands.  This avoids a surprisingly claustrophobic
 feeling while inside twiggy's buffer.  You may also opt to automatically close
 twiggy when running these commands by setting:
 >
-  let g:twiggy_close_on_fugitive_command = 1
+  let g:twiggy_close_on_fugitive_cmd = 1
 <
 
 
