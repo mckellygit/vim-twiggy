@@ -312,8 +312,7 @@ function! s:get_git_mode() abort
   if isdirectory(git_dir . '/rebase-apply') ||
         \ isdirectory(git_dir . '/rebase-merge')
     return 'rebase'
-  elseif s:fexists(git_dir . '/MERGE_HEAD') ||
-        \ !empty(s:git_cmd('diff --shortstat --diff-filter=U | tail -1', 0))
+  elseif s:fexists(git_dir . '/MERGE_HEAD')
     return 'merge'
   elseif s:fexists(git_dir . '/CHERRY_PICK_HEAD')
     return 'cherry-pick'
